@@ -1,0 +1,41 @@
+.vscode/**
+# VS Code Test Files
+.vscode-test/
+.vscode-test.mjs
+
+# Source Files (only include compiled output)
+src/
+tsconfig.json
+
+# Development Files
+.github/
+.git/
+.gitignore
+eslint.config.mjs
+vsc-extension-quickstart.md
+
+# Node Modules Cache
+node_modules/.cache/
+
+# Build Artifacts
+*.vsix
+
+# Documentation (keep README, CHANGELOG, LICENSE)
+CONTRIBUTING.md
+SECURITY.md
+
+# Package Lock
+package-lock.json
+
+# Temporary Files
+.DS_Store
+Thumbs.db*
+src/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/eslint.config.mjs
+**/*.map
+**/*.ts
+**/.vscode-test.*

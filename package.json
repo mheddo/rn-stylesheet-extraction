@@ -1,0 +1,187 @@
+{
+	"name": "rn-stylesheet-extraction",
+	"displayName": "RN StyleSheet Extraction",
+	"description": "Extract inline React Native styles to StyleSheet.create() objects with smart detection of static vs dynamic properties",
+	"version": "0.0.1",
+	"publisher": "mheddo",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mheddo/rn-stylesheet-extraction.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mheddo/rn-stylesheet-extraction/issues"
+	},
+	"homepage": "https://github.com/mheddo/rn-stylesheet-extraction#readme",
+	"keywords": [
+		"react-native",
+		"stylesheet",
+		"css",
+		"styles",
+		"refactor",
+		"extract",
+		"jsx",
+		"typescript"
+	],
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#61DAFB",
+		"theme": "light"
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.104.0"
+	},
+	"categories": [
+		"Formatters",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact",
+		"onLanguage:typescript",
+		"onLanguage:typescriptreact"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "RN StyleSheet Extraction",
+			"properties": {
+				"rnStylesheetExtraction.defaultStyleName": {
+					"type": "string",
+					"default": "myStyle",
+					"description": "Default base name for extracted styles (will be incremented as myStyle1, myStyle2, etc.)"
+				},
+				"rnStylesheetExtraction.preferredStyleSheetName": {
+					"type": "string",
+					"default": "styles",
+					"description": "Preferred name for the StyleSheet object when creating new ones"
+				},
+				"rnStylesheetExtraction.autoImportStyleSheet": {
+					"type": "boolean",
+					"default": true,
+					"description": "Automatically import StyleSheet from react-native when needed"
+				},
+				"rnStylesheetExtraction.showContextMenu": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show extraction options in the right-click context menu"
+				},
+				"rnStylesheetExtraction.sortStyleProperties": {
+					"type": "boolean",
+					"default": false,
+					"description": "Sort style properties alphabetically in extracted StyleSheets"
+				},
+				"rnStylesheetExtraction.preserveComments": {
+					"type": "boolean",
+					"default": true,
+					"description": "Preserve comments when extracting styles"
+				},
+				"rnStylesheetExtraction.extractionLocation": {
+					"type": "string",
+					"enum": [
+						"Bottom",
+						"Top",
+						"After imports"
+					],
+					"default": "Bottom",
+					"description": "Where to place the extracted StyleSheet in the file"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "rn-stylesheet-extraction.extractStyle",
+				"title": "Extract Selected Style",
+				"category": "RN StyleSheet"
+			},
+			{
+				"command": "rn-stylesheet-extraction.extractAllStyles",
+				"title": "Extract All Styles in File",
+				"category": "RN StyleSheet"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "rn-stylesheet-extraction.extractStyle",
+				"key": "ctrl+shift+e",
+				"mac": "cmd+shift+e",
+				"when": "editorTextFocus && (editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact)"
+			},
+			{
+				"command": "rn-stylesheet-extraction.extractAllStyles",
+				"key": "ctrl+shift+a",
+				"mac": "cmd+shift+a",
+				"when": "editorTextFocus && (editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact)"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "rn-stylesheet-extraction.extractStyle",
+					"when": "editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact"
+				},
+				{
+					"command": "rn-stylesheet-extraction.extractAllStyles",
+					"when": "editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact"
+				}
+			],
+			"editor/context": [
+				{
+					"submenu": "rn-stylesheet-extraction.options",
+					"group": "1_modification@99",
+					"when": "rnStylesheetExtraction.showContextMenu"
+				}
+			],
+			"rn-stylesheet-extraction.options": [
+				{
+					"command": "rn-stylesheet-extraction.extractStyle",
+					"group": "1_modification@1"
+				},
+				{
+					"command": "rn-stylesheet-extraction.extractAllStyles",
+					"group": "1_modification@99"
+				}
+			]
+		},
+		"submenus": [
+			{
+				"id": "rn-stylesheet-extraction.options",
+				"label": "Extract Style(s) from View(s) to StyleSheet.create"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src",
+		"test": "vscode-test",
+		"package": "vsce package",
+		"publish": "vsce publish",
+		"prepare": "npm run compile",
+		"clean": "rimraf out",
+		"deploy": "vsce publish"
+	},
+	"devDependencies": {
+		"@types/babel__generator": "^7.27.0",
+		"@types/babel__traverse": "^7.28.0",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "22.x",
+		"@types/vscode": "^1.104.0",
+		"@typescript-eslint/eslint-plugin": "^8.42.0",
+		"@typescript-eslint/parser": "^8.42.0",
+		"@vscode/test-cli": "^0.0.11",
+		"@vscode/test-electron": "^2.5.2",
+		"@vscode/vsce": "^3.6.2",
+		"eslint": "^9.34.0",
+		"rimraf": "^6.0.1",
+		"typescript": "^5.9.2"
+	},
+	"dependencies": {
+		"@babel/generator": "^7.28.3",
+		"@babel/parser": "^7.28.4",
+		"@babel/traverse": "^7.28.4",
+		"@babel/types": "^7.28.4"
+	}
+}
