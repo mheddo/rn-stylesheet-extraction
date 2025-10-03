@@ -2,8 +2,8 @@
 	"name": "rn-stylesheet-extraction",
 	"displayName": "RN StyleSheet Extraction",
 	"description": "Extract inline React Native styles to StyleSheet.create() objects with smart detection of static vs dynamic properties",
-	"version": "0.0.1",
-	"publisher": "mheddo",
+	"version": "1.0.0",
+	"publisher": "mikeheddo",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mheddo/rn-stylesheet-extraction.git"
@@ -24,7 +24,7 @@
 	],
 	"icon": "images/icon.png",
 	"galleryBanner": {
-		"color": "#61DAFB",
+		"color": "#eff1f3",
 		"theme": "light"
 	},
 	"license": "MIT",

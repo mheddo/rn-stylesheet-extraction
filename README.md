@@ -1,7 +1,7 @@
 # React Native StyleSheet Extraction
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/mheddo.rn-stylesheet-extraction)](https://marketplace.visualstudio.com/items?itemName=mheddo.rn-stylesheet-extraction)
-[![Downloads](https://img.shields.io/visual-studio-marketplace/d/mheddo.rn-stylesheet-extraction)](https://marketplace.visualstudio.com/items?itemName=mheddo.rn-stylesheet-extraction)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/mikeheddo.rn-stylesheet-extraction)](https://marketplace.visualstudio.com/items?itemName=mikeheddo.rn-stylesheet-extraction)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/mikeheddo.rn-stylesheet-extraction)](https://marketplace.visualstudio.com/items?itemName=mikeheddo.rn-stylesheet-extraction)
 
 **Transform your React Native development workflow** with intelligent style extraction that automatically separates static and dynamic properties, preserves comments, and maintains perfect code formatting.
 
