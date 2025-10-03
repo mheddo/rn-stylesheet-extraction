@@ -35,11 +35,11 @@ Unlike simple text replacements, this extension uses **advanced AST parsing** to
 
 ### Single Style Extraction
 
-![Extract Single Style](images/ExtractSingle.gif)
+![Extract Single Style](https://raw.githubusercontent.com/mheddo/rn-stylesheet-extraction/main/images/ExtractSingle.gif)
 
 ### Extract All Styles
 
-![Extract All Styles](images/ExtractAll.gif)
+![Extract All Styles](https://raw.githubusercontent.com/mheddo/rn-stylesheet-extraction/main/images/ExtractAll.gif)
 
 ### Method 2: Keyboard Shortcuts
 

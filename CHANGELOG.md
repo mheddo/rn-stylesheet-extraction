@@ -2,6 +2,11 @@
 
 All notable changes to the React Native StyleSheet Extraction extension will be documented in this file.
 
+## [1.0.2] - 2025-10-03 - Image Fix
+
+### Fixed
+- Fixed GIF demonstrations not displaying on marketplace by using absolute GitHub URLs
+
 ## [1.0.1] - 2025-10-03 - Visual Update
 
 ### Changed
