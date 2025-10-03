@@ -2,7 +2,7 @@
 
 All notable changes to the React Native StyleSheet Extraction extension will be documented in this file.
 
-## [0.0.1] - Initial Release
+## [1.0.0] - 2025-10-03 - Initial Release
 
 ### Added
 
