@@ -2,6 +2,11 @@
 
 All notable changes to the React Native StyleSheet Extraction extension will be documented in this file.
 
+## [1.0.1] - 2025-10-03 - Visual Update
+
+### Changed
+- Updated marketplace gallery banner color to light gray (#eff1f3) for better visual contrast
+
 ## [1.0.0] - 2025-10-03 - Initial Release
 
 ### Added
