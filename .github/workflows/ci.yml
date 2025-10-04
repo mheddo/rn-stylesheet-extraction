@@ -11,7 +11,7 @@ jobs:
   build-and-test:
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -26,16 +26,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Clean output directory (Unix)
+        if: runner.os != 'Windows'
+        run: rm -rf out
+
+      - name: Clean output directory (Windows)
+        if: runner.os == 'Windows'
+        run: if (Test-Path out) { Remove-Item -Recurse -Force out }
+
+      - name: Compile
+        run: npm run compile
+
       - name: Run tests (Linux)
         if: runner.os == 'Linux'
-        run: |
-          rm -rf out
-          npm run compile
-          xvfb-run -a npm test
+        run: xvfb-run -a npm test
 
       - name: Run tests (non-Linux)
         if: runner.os != 'Linux'
-        run: |
-          rm -rf out
-          npm run compile
-          npm test
+        run: npm test
